@@ -1,0 +1,47 @@
+version: '3.7'
+services: 
+   
+    audit-authentication-service:
+        image: kavipriyanakkeeran99/audit-authentication-service:0.1
+        ports: 
+            - "8083:8083"
+        restart: always
+        networks:
+            - app-network
+    
+    audit-benchmark-service:
+        image: kavipriyanakkeeran99/audit-benchmark-service:0.1
+        ports: 
+            - "8082:8082"
+        restart: always
+        networks:
+            - app-network
+
+    audit-checklist-service:
+        image: kavipriyanakkeeran99/audit-checklist-service:0.1
+        ports: 
+            - "8081:8081"
+        restart: always
+        networks:
+            - app-network
+
+    audit-severity-service:
+        image: kavipriyanakkeeran99/audit-severity-service:0.1
+        ports: 
+            - "8080:8080"
+        restart: always
+        networks:
+            - app-network
+
+    audit-webportal-service:
+        image: kavipriyanakkeeran99/audit-webportal-service:0.1
+        ports: 
+            - "8084:8084"
+        restart: always
+        networks:
+            - app-network
+
+ 
+# Networks to be created to facilitate communication between containers
+networks:
+    app-network:  
